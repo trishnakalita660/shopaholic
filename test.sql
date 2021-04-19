@@ -1,0 +1,1 @@
+SELECT xyz from m;
