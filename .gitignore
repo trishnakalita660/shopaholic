@@ -6,7 +6,7 @@
 .pnp.js
 
 test/**/yarn.lock
-test/**/package-json.lock
+**/package-json.lock
 
 
 # testing
