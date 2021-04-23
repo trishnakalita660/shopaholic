@@ -6,9 +6,8 @@
 .pnp.js
 
 test/**/yarn.lock
-package-json.lock
 
-test.sql
+
 # testing
 /coverage
 

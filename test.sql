@@ -1,1 +1,0 @@
-SELECT xyz from m;
