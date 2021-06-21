@@ -9,12 +9,13 @@ import Recovery from "./pages/Recovery";
 import Registration from "./pages/Registration";
 import { auth, handleUserProfile } from "./firebase/utils";
 import { setCurrentUser } from "./redux/User/user.actions";
-import { connect } from "react-redux";
+ 
 import Dashboard from "./pages/Dashboard";
 import WithAuth from "./hoc/withAuth";
+import { useDispatch } from "react-redux";
 
 const App = (props) => {
-  const { setCurrentUser, currentUser } = props;
+  const dispatch = useDispatch()
   useEffect(() => {
     
     const authListener = auth.onAuthStateChanged(async (userAuth) => {
@@ -27,7 +28,7 @@ const App = (props) => {
           });
         });
       }
-      setCurrentUser(userAuth);
+     dispatch(setCurrentUser(userAuth));
     });
     return () => {
       authListener();
@@ -92,12 +93,5 @@ const App = (props) => {
     </div>
   );
 };
-
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
-});
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+ 
+export default App;
