@@ -153,17 +153,6 @@ export const signUpUser = ({displayName, email, password, confirmPassword}) => a
 //     }
 // };
 
-export const signInwithGoogle = ()=> async dispatch=>{
-  try{
-   await  auth.signInWithPopup(GoogleProvider)
-   .then(()=>{
-    dispatch({
-      type: userTypes.SIGN_IN_SUCCESS,
-      payload: true 
-    });
-   })
-  }
-  catch(err){
-
-  }
-  };
+// export const signInwithGoogle = ()=> async dispatch=>{
+ 
+//   };
