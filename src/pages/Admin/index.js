@@ -28,7 +28,7 @@ const Admin = props => {
   useEffect(() => {
     dispatch(
       fetchProductsStart()
-    ); 
+    );
   }, []);
 
   const toggleModal = () => setHideModal(!hideModal);
@@ -222,4 +222,4 @@ const Admin = props => {
   );
 }
 
-export default Admin;
+export default Admin

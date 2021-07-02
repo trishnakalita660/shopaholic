@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import "./default.scss";
 import HomepageLayout from "./layouts/HomepageLayout";
 import MainLayout from "./layouts/MainLayout";
+import Search from './pages/Search';
 import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
 import Recovery from "./pages/Recovery";
@@ -37,6 +38,24 @@ const App = (props) => {
             </HomepageLayout>
           )}
         />
+
+        <Route exact
+        path="/search" 
+        render={() => (
+          <MainLayout>
+            <Search />
+          </MainLayout>  
+        )}
+      />
+      <Route
+      path="/search/:filterType"
+      render={() => (
+        <MainLayout>
+          <Search />
+        </MainLayout>  
+      )}
+    />
+
         <Route
           path="/registration"
           render={() =>
