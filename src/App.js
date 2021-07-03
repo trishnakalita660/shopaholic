@@ -18,7 +18,7 @@ import WithAdminAuth from "./hoc/WithAdminAuth";
 import AdminToolBar from "./components/AdminToolbar";
 import AdminLayout from "./layouts/AdminLayout";
 import DashBoardLayout from "./layouts/DashboardLayout";
-
+import ProductDetails from "./pages/ProductDetails"
 const App = (props) => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -52,6 +52,14 @@ const App = (props) => {
       render={() => (
         <MainLayout>
           <Search />
+        </MainLayout>  
+      )}
+    />
+    <Route
+      path="/product/:productID"
+      render={() => (
+        <MainLayout>
+          <ProductDetails/>
         </MainLayout>  
       )}
     />
