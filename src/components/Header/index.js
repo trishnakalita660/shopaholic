@@ -1,20 +1,22 @@
 import React from "react";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import "./styles.scss"; 
-import logo from "../../assets/Logo2.png"; 
+import "./styles.scss";
+import logo from "../../assets/Logo2.png";
+import cart from "../../assets/cart.png";
 import { signOutUserSuccess } from "../../redux/User/user.actions";
-
-const mapState = ({user}) =>({
-  currentUser: user.currentUser
+import { selectCartItemsCount } from "../../redux/Cart/cart.selectors";
+const mapState = (state) => ({
+  currentUser: state.user.currentUser,
+  totalNumCartItems:  selectCartItemsCount(state)
 });
 const Header = (props) => {
   const dispatch = useDispatch();
-  const {currentUser} = useSelector(mapState);
-  
-  const signOut = ()=>{
-    dispatch( signOutUserSuccess() );
-  }
+  const { currentUser, totalNumCartItems } = useSelector(mapState);
+
+  const signOut = () => {
+    dispatch(signOutUserSuccess());
+  };
 
   return (
     <header className="header">
@@ -27,49 +29,47 @@ const Header = (props) => {
 
         <nav>
           <ul>
-          <li>
-              <Link to ="/">
-                Home
-              </Link>
+            <li>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to ="/search">
-                Search
-              </Link>
+              <Link to="/search">Search</Link>
             </li>
-            
           </ul>
         </nav>
+
         <div className="callToActions">
-        { currentUser &&(
           <ul>
-          <li>
-          <Link to="/dashboard">My Account</Link>
-        </li>
-          <li>
-          <span onClick = {()=> signOut()}> Logout</span>
-          </li>
-          
+            <li>
+              <Link>
+                {" "}
+                <img src={cart} atl="cart" height="25px" width="25px" />{totalNumCartItems}
+              </Link>
+            </li>
+            {currentUser && [
+              <li>
+                <Link to="/dashboard">My Account</Link>
+              </li>,
+              <li>
+                <span onClick={() => signOut()}> Logout</span>
+              </li>,
+            ]}
           </ul>
-        )}
-    
-        {!currentUser && (
+
           <ul>
-          <li>
-          <Link to="/dashboard">Dashboard</Link>
-        </li>
-          <li>
-            <Link to="/registration">Register</Link>
-          </li>
-         
+            {!currentUser && [
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>,
+              <li>
+                <Link to="/registration">Register</Link>
+              </li>,
 
-          <li>
-            <Link to="/login">LOGIN</Link>
-          </li>
-
-        </ul>
-        )}
-         
+              <li>
+                <Link to="/login">LOGIN</Link>
+              </li>,
+            ]}
+          </ul>
         </div>
       </div>
     </header>
@@ -77,9 +77,7 @@ const Header = (props) => {
 };
 
 Header.defaultProps = {
-  currentUser: null
-}
-
-
+  currentUser: null,
+};
 
 export default Header;
