@@ -41,7 +41,7 @@ const Header = (props) => {
         <div className="callToActions">
           <ul>
             <li>
-              <Link>
+              <Link to ="/cart">
                 {" "}
                 <img src={cart} atl="cart" height="25px" width="25px" />{totalNumCartItems}
               </Link>

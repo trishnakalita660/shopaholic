@@ -7,6 +7,7 @@ import Search from './pages/Search';
 import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
 import Recovery from "./pages/Recovery";
+import Cart from './pages/Cart'
 import Registration from "./pages/Registration";
 import { auth, handleUserProfile } from "./firebase/utils";
 import { checkUserSession } from "./redux/User/user.actions";
@@ -60,6 +61,14 @@ const App = (props) => {
       render={() => (
         <MainLayout>
           <ProductDetails/>
+        </MainLayout>  
+      )}
+    />
+    <Route
+      path="/cart"
+      render={() => (
+        <MainLayout>
+          <Cart/>
         </MainLayout>  
       )}
     />
