@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/shopaholic/static/css/main.48a62870.chunk.css",
+    "main.js": "/shopaholic/static/js/main.fd3b1365.chunk.js",
+    "main.js.map": "/shopaholic/static/js/main.fd3b1365.chunk.js.map",
+    "runtime-main.js": "/shopaholic/static/js/runtime-main.7fcc67c9.js",
+    "runtime-main.js.map": "/shopaholic/static/js/runtime-main.7fcc67c9.js.map",
+    "static/js/2.91dab125.chunk.js": "/shopaholic/static/js/2.91dab125.chunk.js",
+    "static/js/2.91dab125.chunk.js.map": "/shopaholic/static/js/2.91dab125.chunk.js.map",
+    "index.html": "/shopaholic/index.html",
+    "static/css/main.48a62870.chunk.css.map": "/shopaholic/static/css/main.48a62870.chunk.css.map",
+    "static/js/2.91dab125.chunk.js.LICENSE.txt": "/shopaholic/static/js/2.91dab125.chunk.js.LICENSE.txt",
+    "static/media/man2.63612c8c.jpg": "/shopaholic/static/media/man2.63612c8c.jpg",
+    "static/media/woman2.87e5fd42.jpg": "/shopaholic/static/media/woman2.87e5fd42.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7fcc67c9.js",
+    "static/js/2.91dab125.chunk.js",
+    "static/css/main.48a62870.chunk.css",
+    "static/js/main.fd3b1365.chunk.js"
+  ]
+}
